@@ -1,0 +1,33 @@
+<%= flash[:alert] if flash[:alert]%>
+<h1>Listing Writers</h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Screen Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @writers.each do |writer| %>
+  <tr>
+    <td><%= writer.first_name %></td>
+    <td><%= writer.last_name %></td>
+    <td><%= writer.screen_name %></td>
+    <td><%= writer.gender %></td>
+    <td><%= writer.user.email %></td>
+    <td><%= link_to 'Show', writer %></td>
+    <td><%= link_to 'Edit', edit_writer_path(writer) %></td>
+    <td><%= link_to 'Delete', writer, method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Writer', new_writer_path %>
+

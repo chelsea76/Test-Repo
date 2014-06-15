@@ -1,0 +1,9 @@
+<%= flash[:notice] if flash[:notice] %>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong> as Role: <%= current_user.role_type %>.
+  <%= link_to "New Writer", new_writer_path %>
+  <%= link_to "Writers List", writers_path %>
+  <%= link_to "Invite Writer", invite_writer_path %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% end %>
