@@ -1,5 +1,5 @@
 class WritersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:new, :create, :show]
   before_filter :check_role, only: [:index, :destroy, :edit, :update]
   
   def new
@@ -15,7 +15,9 @@ class WritersController < ApplicationController
   end
   
   def show
-    redirect_to Writer.find(current_user.role_id), notice: "You don't have access to this Page." and return if ( params[:id] != current_user.role_id.to_s && current_user.role_type == "Writer" )
+    unless current_user.nil?
+      redirect_to Writer.find(current_user.role_id), notice: "You don't have access to this Page." and return if ( params[:id] != current_user.role_id.to_s && current_user.role_type == "Writer" )
+    end
     @writer = Writer.find params[:id]
   end
   
