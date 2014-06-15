@@ -3,7 +3,7 @@ class AdminMailer < ActionMailer::Base
   
   def invite(user)
     @user = user
-    @url = "http://localhost:3000/writers/new"
+    @url = "http://test-complitech-app.herokuapp.com/writers/new"
     mail(to: @user.email, subject: "Invitation")
   end
 end
