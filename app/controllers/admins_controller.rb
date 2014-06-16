@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
     @user = User.new(params[:user])
     redirect_to invite_writer_path, notice: "Email Id is invalid." and return if ( params[:user][:email].blank? ||  (params[:user][:email] =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i) != 0 )
     AdminMailer.invite(@user).deliver
-    redirect_to invite_writer_path, notice: "Mail Successfully send."
+    redirect_to invite_writer_path, notice: "Mail successfully send."
   end
   
   def check_role

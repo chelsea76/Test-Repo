@@ -1,26 +1,27 @@
 <p>
-  <b>First Name:</b>
+  <label>First Name:</label>
   <%= @writer.first_name %>
 </p>
 
 <p>
-  <b>Last Name</b>
+  <label>Last Name:</label>
   <%= @writer.last_name %>
 </p>
 
 <p>
-  <b>Screen Name</b>
+  <label>Screen Name:</label>
   <%= @writer.screen_name %>
 </p>
 
 <p>
-  <b>Gender</b>
+  <label>Gender:</label>
   <%= @writer.gender %>
 </p>
 
 <p>
-  <b>Email</b>
+  <label>Email:</label>
   <%= @writer.user.email %>
 </p>
-
-<%= link_to 'Back', new_writer_path %>
+<% if current_user.nil? %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>

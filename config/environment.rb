@@ -8,9 +8,9 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {  
       :address              => "smtp.gmail.com",  
       :port                 => 587,  
-      :domain               => "gmail.com",  
-      :user_name            => "pdipesh87", #Your user name
-      :password             => "dipu8787", # Your password
+      :domain               => "test-complitech-app.herokuapp.com",  
+      :user_name            => ENV["GMAIL_USERNAME"],
+      :password             => ENV["GMAIL_PASSWORD"],
       :authentication       => "plain",  
       :enable_starttls_auto => true  
    }
