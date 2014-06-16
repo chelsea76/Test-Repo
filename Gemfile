@@ -8,7 +8,9 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "rspec-rails"
-
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem 'bootstrap-sass'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

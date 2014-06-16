@@ -10,33 +10,47 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+  <div class="form-group">
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :first_name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
     <%= f.text_field :last_name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :screen_name %><br />
+  <div class="form-group">
+    <%= f.label :screen_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
     <%= f.text_field :screen_name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :gender %><br />
+  <div class="form-group">
+    <%= f.label :gender, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
     <%= f.text_field :gender %>
+    </div>
   </div>
   <%= f.fields_for :user do |rf| %>
-    <div class="field">
-      <%= rf.label :email %><br />
+    <div class="form-group">
+      <%= rf.label :email, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
       <%= rf.text_field :email %>
+      </div>
     </div>
-    <div>
-      <%= rf.label :password %><br />
+    <div class="form-group">
+      <%= rf.label :password, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
       <%= rf.password_field :password %>
+      </div>
     </div>
   <% end %>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Submit", class: "btn btn-default" %>
+    </div>
   </div>
 <% end %>
